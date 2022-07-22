@@ -1,0 +1,457 @@
+/* all */
+
+body {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  color: #ddd;
+  position: relative;
+  background-color: #333;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+h2 {
+  font-family: Georgia, serif;
+}
+
+a {
+  text-decoration: none; 
+  color: #fff;
+}
+
+img {
+  max-width: 100%;
+}
+
+dl,dt, dd {
+  margin: 0;
+  padding: 0;
+}
+
+input, select, textarea, button {
+  box-sizing: border-box;
+}
+
+.animate {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 1s, transform 1.5s;
+}
+
+.animate.head {
+  opacity: 0;
+  transition: opacity 9s;
+  transition-delay: 1s;
+}
+
+.animate.headPlus {
+  opacity: 0;
+  transform: translateX(-400px);
+  transition: opacity 1s, transform 1s;
+}
+
+.animate.slide-from-right {
+  transform: translateX(40px);
+}
+
+.animate.slide-from-left {
+  transform: translateX(-40px);
+}
+
+.animate.appear {
+  opacity: 1;
+  transform: none;
+}
+
+/* header */
+
+#header {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+  transition: all 0.6;
+}
+
+#header .textarea  {
+  position: relative;
+  top: 0;
+  left: 0;
+  text-align: center;
+}
+
+#header .textarea .text{
+  position: absolute;
+  color: #ddd;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, 50%);
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%,-50%);
+  margin: 0 auto;
+  z-index: 2;
+}
+
+#header .text h1 {
+  font-family: cursive;
+  font-size: 3rem;
+}
+
+#header .text p {
+  color: #fff;
+}
+
+
+#header .textarea img {
+  width: 100%;
+  height: 800px;
+  object-fit: cover;
+}
+
+
+#header nav {
+  display: block;
+  width: 300px;
+  position: fixed;
+  top: 0;
+  left: -300px;
+  bottom: 0;
+  transition: all .5s;
+  opacity: 0;
+  z-index: 30;
+}
+
+#header.open nav {
+  left: 0;
+  opacity: 1;
+  z-index: 30;
+}
+
+#header nav .locate {
+  display: flex;
+}
+
+#header nav li {
+  font-size: 1.2rem;
+  margin: 0 10px;
+  border-bottom: 1px solid #777;
+}
+
+#header nav .locate li a {
+  display: block;
+  padding: 10px 30px;
+  margin-top: 10px;
+}
+
+#header nav .locate li:nth-child(6) {
+  border: none;
+}
+
+#header nav .locate li:nth-child(6) a {
+  color:peru;
+}
+
+#header nav .locate li a:hover {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+#header .toggle-btn {
+  display: block;
+  position: fixed;
+  top: 25px;
+  right: 40px;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  z-index: 40;
+}
+
+#header .toggle-btn span {
+  position: absolute;
+  display: block;
+  left: 0;
+  width: 30px;
+  height: 2px;
+  background-color: #ddd;
+  border-radius: 4px;
+  transition: all .5s;
+}
+
+.open .toggle-btn span {
+  background-color: #fff;
+}
+
+.open .toggle-btn span:nth-child(1) {
+  transform: translateY(10px) rotate(-315deg);
+}
+
+.open .toggle-btn span:nth-child(2) {
+  opacity: 0;
+}
+
+.open .toggle-btn span:nth-child(3) {
+  transform: translateY(-10px) rotate(315deg);
+}
+
+.toggle-btn span:nth-child(1) {
+  top: 4px;
+}
+
+.toggle-btn span:nth-child(2) {
+  top: 14px;
+}
+
+.toggle-btn span:nth-child(3) {
+  bottom: 4px;
+}
+
+#mask {
+  display: none;
+}
+
+.open #mask {
+  display: block;
+  background-color: #000;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  opacity: 0.8;
+  cursor: pointer;
+}
+
+/* main */
+
+#main {
+  margin: 0 auto;
+  max-width: 960px;
+  /* position: relative; */
+  overflow: hidden;
+  /* z-index:20; */
+}
+
+#main section {
+  text-align: center;
+}
+
+#main section span {
+  display: block;
+  margin: 0 auto;;
+  width: 80px;
+  height: 1px;
+  background-color: saddlebrown;
+  margin-bottom: 80px;
+}
+
+#main section h2 {
+  padding: 120px 0 10px 0;
+  margin: 0;
+}
+
+/* main about */
+
+#main section#about {
+  position: relative;
+}
+
+#main section#about .about-container {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0 20px;
+}
+
+#main section#about .about-text {
+  width: 65%;
+}
+
+#main section#about img {
+  position: absolute;
+  right:0px;
+  bottom: 0px;
+  width: 30%;
+}
+
+#main section#about h3,p,li {
+  text-align: left;
+}
+
+/* main skill */
+
+#main section#skill .skill-container {
+  padding: 0 20px;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+}
+
+#main section#skill .skill-container img{
+  width: 20%;
+}
+
+
+#main section#skill .skill-container p {
+  width: 65%;
+}
+
+/* main works */
+
+
+#main section#works span{
+  margin-bottom: 0;
+}
+
+#main section#works p {
+  text-align: center;
+  padding: 0 20px;
+}
+
+#main section#works h3 {
+  text-align: left;
+  padding: 0 20px;
+  margin: 300px 0;
+}
+
+/* main news */
+
+#main section#news {
+  position: relative;
+}
+
+#main section#news img {
+  position: absolute;
+  z-index: 1;
+  width: 220px;
+  right: -100px;
+  bottom: -100px;
+}
+
+#main section#news dl {
+  display: flex;
+}
+
+#main section#news dt {
+  margin: 0 100px 0 20px;
+}
+
+#main section#news .news span {
+  width: 100%;
+  background-color: #555;
+  margin: 30px 0;
+  padding: 0;
+}
+
+/* main contact */
+
+
+#main section#contact dl {
+  text-align: left;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 auto 20px auto;
+  padding: 20px;
+}
+
+#main section#contact dt {
+  width: 15%;
+}
+
+#main section#contact dd {
+  width: 85%;
+  margin-bottom: 10px;
+}
+
+#main section#contact dd input, 
+#main section#contact dd textarea {
+  border: 1px solid black;
+  width: 100%;
+  padding: 10px;
+}
+
+#main section#contact dd textarea {
+  height: 10rem;
+}
+
+#main section#contact .button {
+  text-align: center;
+}
+
+#main section#contact .button input {
+  border: 1px solid black;
+  width: 200px;
+  padding: 15px 0;
+}
+
+
+#main section#contact .button input:hover {
+  background-color: saddlebrown;
+}
+
+/* footer */
+
+#footer {
+  margin-top: 100px;
+  background-color: saddlebrown;
+  padding: 5px 20px;
+}
+
+#footer h2 {
+  text-align: center;
+  font-size: 0.5rem;
+  font-family: cursive;
+}
+
+/* media */
+
+
+@media  screen and (max-width: 1180px) {
+
+  #main section#news img {
+    position: absolute;
+    right: 0;
+  }
+
+
+
+
+}
+
+@media screen and (max-width: 940px) {
+
+  #header nav .locate {
+    display: block;
+    padding: 25px;
+  }
+
+  #header nav .locate li {
+    border: none;
+  }
+
+  #header nav .locate li a {
+    padding: 1rem;
+  }
+
+}
+
+@media screen and (max-width: 600px) {
+
+  
+
+  #main section#contact dl {
+    flex-direction: column;
+  }
+
+  #main section#contact dt {
+    width: 100%;
+  }
+
+  #main section#contact dd {
+    width: 100%;
+  }
+
+}
