@@ -35,4 +35,20 @@
     observer.observe(el);
   });
 
+  // smooth scroll
+
+  document.querySelectorAll('a[href^="#"]').forEach(link => {
+    link.addEventListener('click', e => {
+      e.preventDefault()
+
+      const target = document.querySelector(link.hash),
+            offsetTop = window.pageYOffset + target.getBoundingClientRect().top
+
+      window.scrollTo({
+        top: offsetTop,
+        behavior: 'smooth'
+      })
+    })
+  })
+
 }
